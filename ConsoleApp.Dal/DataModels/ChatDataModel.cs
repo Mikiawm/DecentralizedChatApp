@@ -1,10 +1,10 @@
-namespace ConsoleApp.Dal.DataModels
+namespace ChatApp.Dal.DataModels
 {
     using System;
     using System.Data.Entity;
     using System.Linq;
 
-    public class ConsoleDateModel : DbContext
+    public class ChatDataModel : DbContext
     {
         // Your context has been configured to use a 'ConsoleDateModel' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
@@ -12,8 +12,8 @@ namespace ConsoleApp.Dal.DataModels
         // 
         // If you wish to target a different database and/or database provider, modify the 'ConsoleDateModel' 
         // connection string in the application configuration file.
-        public ConsoleDateModel()
-            : base("name=ConsoleDateModel")
+        public ChatDataModel()
+            : base("name=ChatDataModel")
         {
         }
 
