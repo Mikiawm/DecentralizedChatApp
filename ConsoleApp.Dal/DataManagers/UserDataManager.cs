@@ -1,9 +1,10 @@
-﻿using ChatApp.Dto.DTO;
+﻿using ChatApp.Dal.DBModel;
+using ChatApp.Dto.DTO;
+using ConsoleApp.Dal.DTOAssemblers;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
-using System.Data.Objects;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -22,24 +23,28 @@ namespace ConsoleApp.Dal.DataManagers
 
             try
             {
-                using (var ctx = new SimikEntities())
+                using (var ctx = new ChatDataModel())
                 {
                     var encja = user.ToEntity();
-                    ctx.UzytkownikSet.Add(encja);
+                    ctx.UserSet.Add(encja);
                     ctx.SaveChanges();
                     user.Id = encja.Id;
                 }
             }
             catch (Exception exception)
             {
-                logger.LogException(LoggingLevel.Error, exception);
-                result = false;
-
                 throw exception;
 
             }
 
             return result;
+        }
+        public bool CheckLoginExists(string login)
+        {
+            using (var ctx = new ChatDataModel())
+            {
+                return ctx.UserSet.Any(r => r.Login == login);
+            }
         }
     }
 }

@@ -11,6 +11,7 @@ namespace ConsoleApp.Dal.DTOAssemblers
     public static partial class UserEFAssembler
     {
         static partial void OnEntity(this User dto, UserEF entity);
+        static partial void OnDTO(this UserEF entity, User dto);
         public static UserEF ToEntity(this User dto)
         {
             if (dto == null) return null;
@@ -19,8 +20,8 @@ namespace ConsoleApp.Dal.DTOAssemblers
 
             entity.Id = dto.Id;
             entity.Email = dto.Email;
-            entity.Name = dto.Imie;
-            entity.LastName = dto.Nazwisko;
+            entity.Name = dto.Name;
+            entity.LastName = dto.LastName;
             entity.Login = dto.Login;
 
 
@@ -36,12 +37,14 @@ namespace ConsoleApp.Dal.DTOAssemblers
 
             dto.Id = entity.Id;
             dto.Email = entity.Email;
-            dto.Imie = entity.Imie;
-            dto.Nazwisko = entity.Nazwisko;
+            dto.Name = entity.Name;
+            dto.LastName = entity.LastName;
             dto.Login = entity.Login;
-            dto.Aktywny = entity.Aktywny;
+            dto.Active = entity.Active;
+            entity.OnDTO(dto);
+            return dto;
         }
-        public static List<UzytkownikEF> ToEntities(this IEnumerable<Uzytkownik> dtos)
+        public static List<UserEF> ToEntities(this IEnumerable<User> dtos)
         {
             if (dtos == null) return null;
 
@@ -53,7 +56,7 @@ namespace ConsoleApp.Dal.DTOAssemblers
         /// </summary>
         /// <param name="entities"></param>
         /// <returns></returns>
-        public static List<Uzytkownik> ToDTOs(this IEnumerable<UzytkownikEF> entities)
+        public static List<User> ToDTOs(this IEnumerable<UserEF> entities)
         {
             if (entities == null) return null;
 
