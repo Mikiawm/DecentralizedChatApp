@@ -10,6 +10,7 @@ namespace ConsoleApp.Dal.DBModel
     {
         public UserEF()
         {
+            this.MyConversation = new HashSet<ConversationEF>();
 
         }
         public int Id { get; set; }
@@ -25,5 +26,7 @@ namespace ConsoleApp.Dal.DBModel
         public bool Active { get; set; }
 
         public string Password { get; set; }
+
+        public virtual ICollection<ConversationEF> MyConversation { get; set; }
     }
 }

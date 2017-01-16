@@ -53,6 +53,8 @@
   <ItemGroup>
     <Compile Include="DataManagers\UserDataManager.cs" />
     <Compile Include="DBModel\ChatDataModel.cs" />
+    <Compile Include="DBModel\ConversationEF.cs" />
+    <Compile Include="DBModel\MessageEF.cs" />
     <Compile Include="DBModel\UserEF.cs" />
     <Compile Include="DTOAssemblers\UserEFAssembler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
