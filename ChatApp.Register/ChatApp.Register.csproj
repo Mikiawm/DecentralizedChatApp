@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A806BA0F-4097-413A-A3F0-30496BCFBFE2}</ProjectGuid>
+    <ProjectGuid>{801D1C09-59B5-473F-B437-6DA85C51037A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConsoleApplication4</RootNamespace>
-    <AssemblyName>ConsoleApplication4</AssemblyName>
+    <RootNamespace>ChatApp.Register</RootNamespace>
+    <AssemblyName>ChatApp.Register</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
